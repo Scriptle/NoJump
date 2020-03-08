@@ -11,6 +11,7 @@ function setup()
 	------
 	script.NoJump.Disabled = false
 	script.NoJump.StartUp.Disabled = false
+	script.NoJump.Analytics.Disabled = false
 	script.NoJump.Parent = game.ServerScriptService
 	------
 	script:Destroy()
