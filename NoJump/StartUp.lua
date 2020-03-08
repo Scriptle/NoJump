@@ -1,6 +1,6 @@
 function getData()
-	jsonLog = game.HttpService:GetAsync("https://api.trello.com/1/lists/5944519433d9017c155bd95c/cards?fields=name,desc", true)
-	jsonShoutouts = game.HttpService:GetAsync("https://api.trello.com/1/lists/5956f9bc00f99fee850a8424/cards?fields=name", true)
+	jsonLog = game.HttpService:GetAsync("https://api.trello.com/1/lists/5944519433d9017c155bd95c/cards?fields=name,desc&key=9c925ff9c0e228e39bdfd4a2fd60f015", true)
+	jsonShoutouts = game.HttpService:GetAsync("https://api.trello.com/1/lists/5956f9bc00f99fee850a8424/cards?fields=name&key=9c925ff9c0e228e39bdfd4a2fd60f015", true)
 end
 
 local success, message = pcall(getData)
