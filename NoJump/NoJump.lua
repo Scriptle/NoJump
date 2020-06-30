@@ -2,6 +2,8 @@ local disableJump = script.DisableJump
 local disableReset = script.DisableReset
 local components = script.Components
 local seatbelts = script.Seatbelts
+local controllerSeatName = script.ControllerSeatName
+local exceptionSeatName = script.ExceptionSeatName
 
 function setup(object)
 	if object:IsA("Seat") or object:IsA("VehicleSeat") then
@@ -11,7 +13,7 @@ function setup(object)
 		components.NJEnabled.DisableReset.Value = disableReset
 		components.Seatbelt.DisableJump.Value = disableJump
 		
-		if object.Name == "MainSeat" then			
+		if object.Name == controllerSeatName.Value then			
 			local cln = components.NJControl:Clone()
 			cln.Disabled = false
 			cln.Parent = object
@@ -21,7 +23,7 @@ function setup(object)
 			value.Handler.Disabled = false
 			-----
 			value.Parent = object
-		elseif object.Name == "ExceptionSeat" then
+		elseif object.Name == exceptionSeatName.Value then
 			local value = components.SeatType:Clone()
 			value.Value = "Disabled"
 			value.Handler.Disabled = false

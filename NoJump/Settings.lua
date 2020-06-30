@@ -8,4 +8,7 @@ settings.Admins = {"Player1"}
 
 settings.Seatbelts = false
 
+settings.ControllerSeatName = "MainSeat"
+settings.ExceptionSeatName = "ExceptionSeat"
+
 return settings

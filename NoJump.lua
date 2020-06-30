@@ -5,11 +5,18 @@ if not module then
 	settings = require(script.Settings)
 else
 	settings = require(game.ServerStorage:WaitForChild("Settings"))
+	if settings.ControllerSeatName == nil then
+		warn("Please update the NoJump Loader. Simply re-insert the model.")
+		settings = require(script.Settings)
+	end
 end
 
 if settings.Seatbelts then
 	script.NoJump.Seatbelts.Value = true
 end
+
+script.NoJump.ControllerSeatName.Value = settings.ControllerSeatName
+script.NoJump.ExceptionSeatName.Value = settings.ExceptionSeatName
 
 function findParentModel(object)
 	--if object.Parent == workspace or object.Parent.Parent == game.InsertService.Folder then
